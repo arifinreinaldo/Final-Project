@@ -4,18 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Register Member</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div class="container">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">Welcome to Me</h3>
+                <nav class="nav nav-masthead justify-content-center">
+                <a class="nav-link active" href="index.html">Home</a>
+                <a class="nav-link" href="register.html">Register</a>
+                </nav>
+            </div>
+        </header>
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <strong>Warning!</strong>
+            <br>
+            Please fill all field before submit
+            <span id='error-text'></span>
+        </div>
         <h1>Register Here!</h1>
         <div class="row">
             <div class="col-12">
                     Fill in Your name and address, then click submit to register
             </div>
         </div>
-        <form id='formSubmit' action="https://formspree.io/arifin.reinaldo@gmail.com" method="POST">
+        <form id="formSubmit" action="https://formspree.io/arifin.reinaldo@gmail.com" method="POST">
             <div class="row">
                 <div class="col-sm-1">Name</div>
                 <div class="col-sm-3"><input type="text" name="txt_nama" id="txt_nama"></div>
@@ -38,6 +54,21 @@
     <script src="./js/jquery-3.4.0.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script>
+        $(document).ready(function () {
+            $('.alert').hide();
+            $('#buttSubmit').click(function (e) { 
+                e.preventDefault();
+                $('.alert').hide();
+                let email = $('#txt_email').val();
+                let nama = $('#txt_nama').val();
+                let job = $('#txt_job').val();
+                if(email!=""&&nama!=""&&job!=""){
+                    $('#formSubmit').submit();
+                }else{
+                    $('.alert').show();
+                }
+            });
+        });
     </script>
 </body>
 </html>

@@ -1,3 +1,6 @@
-body{
-    padding:10em;
+.container{
+    padding: 3em;
+}
+.row{
+    margin : 1rem;
 }
