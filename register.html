@@ -16,6 +16,7 @@
                 <nav class="nav nav-masthead justify-content-center">
                 <a class="nav-link active" href="index.html">Home</a>
                 <a class="nav-link" href="register.html">Register</a>
+                <a class="nav-link" href="table.html">Exercise 3</a>
                 </nav>
             </div>
         </header>
@@ -46,11 +47,31 @@
             </div>
             <div class="row">
                 <div class="col-sm-2">
-                    <button id="buttSubmit">Submit</button><button id="buttView">View Data</button> 
+                    <button id="buttSubmit">Submit</button>
+                    <button id="buttView">View Data</button> 
                 </div>
             </div>
         </form>
     </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Do you want to submit this data?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+              <button type="button" class="btn btn-primary" onclick="submitData()">Yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <script src="./js/jquery-3.4.0.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script>
@@ -63,12 +84,15 @@
                 let nama = $('#txt_nama').val();
                 let job = $('#txt_job').val();
                 if(email!=""&&nama!=""&&job!=""){
-                    $('#formSubmit').submit();
+                    $('#exampleModal').modal('show')
                 }else{
                     $('.alert').show();
                 }
             });
         });
+        function submitData(){
+            $('#formSubmit').submit();
+        }
     </script>
 </body>
 </html>
