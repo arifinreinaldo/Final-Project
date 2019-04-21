@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Register Here!</h1>
+        <div class="row">
+            <div class="col-12">
+                    Fill in Your name and address, then click submit to register
+            </div>
+        </div>
+        <form id='formSubmit' action="https://formspree.io/arifin.reinaldo@gmail.com" method="POST">
+            <div class="row">
+                <div class="col-sm-1">Name</div>
+                <div class="col-sm-3"><input type="text" name="txt_nama" id="txt_nama"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-1">Email</div>
+                <div class="col-sm-3"><input type="email" name="txt_email" id="txt_email"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-1">Job</div>
+                <div class="col-sm-3"><input type="text" name="txt_job" id="txt_job"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <button id="buttSubmit">Submit</button><button id="buttView">View Data</button> 
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="./js/jquery-3.4.0.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script>
+    </script>
+</body>
+</html>
